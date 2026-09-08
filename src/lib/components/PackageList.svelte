@@ -1,6 +1,6 @@
 <script>
   import PackageCard from './PackageCard.svelte';
-  import { packages } from '../data/packages';
+  import { packages } from '$lib/data';
 </script>
 
 <main

@@ -13,4 +13,5 @@ export interface PackageItem {
   command?: string;
   description: string;
   links: PackageLink[];
+  order?: number;
 }

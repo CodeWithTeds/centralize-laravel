@@ -54,8 +54,30 @@ If you have built a Laravel package and want to add it to the directory:
 
 1. Review the package contract in `src/lib/types/package.ts`.
 2. Add your package's preview media (`.webm`) to `src/assets/videos/`.
-3. Add your package entry into `src/lib/data/packages.ts`.
-4. Submit a Pull Request.
+3. Create a new file in `src/lib/data/packages/<your-package-name>.ts`:
+
+   ```ts
+   import type { PackageItem } from '$lib/types';
+   import previewVideo from '@/assets/videos/<your-video>.webm';
+
+   const pkg: PackageItem = {
+     id: 'your-package-id',
+     title: 'vendor/package-name',
+     titleUrl: 'https://github.com/vendor/package-name',
+     meta: 'MIT',
+     video: previewVideo,
+     command: 'composer require vendor/package-name',
+     description: 'A brief description of what your package does.',
+     links: [
+       { label: 'packagist.org', url: 'https://packagist.org/packages/vendor/package-name' },
+       { label: 'github.com', url: 'https://github.com/vendor/package-name' }
+     ]
+   };
+
+   export default pkg;
+   ```
+
+4. Submit a Pull Request. Your package will be automatically detected and displayed with zero merge conflicts!
 
 ## Contributors
 
