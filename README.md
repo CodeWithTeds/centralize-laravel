@@ -1,43 +1,66 @@
-# Svelte + Vite
+# Centralized Laravel
 
-This template should help get you started developing with Svelte in Vite.
+A dedicated ecosystem and discovery platform for curated Laravel packages, developer tooling, and specialized utilities.
 
-## Recommended IDE Setup
+## About the Project
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+Centralized Laravel was created to solve a common challenge in the Laravel and PHP open-source community: high-impact developer packages, schema generators, and specialized algorithms are often scattered across personal repositories or buried deep inside Packagist search results.
 
-## Need an official Svelte framework?
+This platform serves as a centralized, community-driven hub that aggregates, showcases, and documents packages built for modern Laravel workflows. Rather than sifting through plain, text-heavy directory listings, developers get:
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- Instant Installation: Copy ready-to-run Composer commands directly into your terminal without digging through setup documentation.
+- Verified Source Links: Direct, verified links to official Packagist releases, GitHub source repositories, and licenses.
+- Developer-Friendly Contributions: An open catalog with a standardized data contract (`PackageItem`), allowing developers to submit and showcase their own packages.
 
-## Technical considerations
+The application is engineered with Svelte 5 runes and Tailwind CSS for instant load times, responsive split-column layout, and a glowing retro Laravel particle logo.
 
-**Why use this over SvelteKit?**
+## Getting Started
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+### Prerequisites
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+- Node.js (v20+ recommended)
+- npm
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+### Installation
 
-**Why include `.vscode/extensions.json`?**
+1. Clone the repository:
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+   ```bash
+   git clone https://github.com/CodeWithTeds/centralize-laravel.git
+   cd centralize-laravel
+   ```
 
-**Why enable `checkJs` in the JS template?**
+2. Install dependencies:
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+   ```bash
+   npm install
+   ```
 
-**Why is HMR not preserving my local component state?**
+3. Run the development server:
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+   ```bash
+   npm run dev
+   ```
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+4. Build for production:
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store';
-export default writable(0);
-```
+   ```bash
+   npm run build
+   ```
+
+## Contributing a Package
+
+If you have built a Laravel package and want to add it to the directory:
+
+1. Review the package contract in `src/lib/types/package.ts`.
+2. Add your package's preview media (`.webm`) to `src/assets/videos/`.
+3. Add your package entry into `src/lib/data/packages.ts`.
+4. Submit a Pull Request.
+
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=CodeWithTeds/centralize-laravel)](https://github.com/CodeWithTeds/centralize-laravel/graphs/contributors)
+
+## License
+
+This project is open-source software licensed under the [MIT License](https://opensource.org/license/mit).
