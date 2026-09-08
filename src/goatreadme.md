@@ -9,7 +9,7 @@
 
 # 🐐 GOAT
 
-### Terminal-first Laravel *Feature* Generator
+### Terminal-first Laravel _Feature_ Generator
 
 **Template · Boilerplate · Feature Slice — from a single migration or ERD**
 
@@ -44,6 +44,7 @@ php artisan goat:make Product
 <td>
 
 **You give**
+
 ```php
 Schema::create('products', function($t){
   $t->id();
@@ -53,7 +54,9 @@ Schema::create('products', function($t){
   $t->timestamps();
 });
 ```
-*or* a plain ERD:
+
+_or_ a plain ERD:
+
 ```
 products
 ---------
@@ -66,6 +69,7 @@ price decimal(10,2)
 <td>
 
 **You get — template-ready**
+
 ```
 Product
 ├── 📄 2024_*_create_products_table.php
@@ -79,6 +83,7 @@ Product
 ├── 🔒 ProductPolicy.php
 └── 🧪 ProductTest.php
 ```
+
 Service → Repository, Resource, Policy, Tests included.
 
 </td>
@@ -91,18 +96,19 @@ Service → Repository, Resource, Policy, Tests included.
 
 ### ✨ Feature Generator, not just CRUD
 
-| CRUD generator | **GOAT — Feature / Template / Boilerplate** |
-|---|---|
-| Model + Controller | **+ Service + Repository (separation)** |
-| No validation | **+ Store/Update Requests with inferred rules** |
-| No API layer | **+ JsonResource** |
-| No auth | **+ Policy (7 methods)** |
-| No tests | **+ Feature tests (5 scenarios)** |
-| One table = one file | **ERD with N tables → N slices** |
-| Hardcoded paths | **All paths & namespaces configurable** |
-| Fixed stubs | **Publish & customize — `vendor:publish --tag=goat-stubs`** |
+| CRUD generator       | **GOAT — Feature / Template / Boilerplate**                 |
+| -------------------- | ----------------------------------------------------------- |
+| Model + Controller   | **+ Service + Repository (separation)**                     |
+| No validation        | **+ Store/Update Requests with inferred rules**             |
+| No API layer         | **+ JsonResource**                                          |
+| No auth              | **+ Policy (7 methods)**                                    |
+| No tests             | **+ Feature tests (5 scenarios)**                           |
+| One table = one file | **ERD with N tables → N slices**                            |
+| Hardcoded paths      | **All paths & namespaces configurable**                     |
+| Fixed stubs          | **Publish & customize — `vendor:publish --tag=goat-stubs`** |
 
 Use it as:
+
 - **CRUD scaffold** for admin panels
 - **Feature slice** for clean architecture (Service/Repo)
 - **Boilerplate / template** for new domains (`Inventory`, `Order`, `Booking`)
@@ -162,6 +168,7 @@ php artisan goat:make World --module=Admin --force
 # → app/Modules/Admin/Models/World.php + app/Modules/Admin/Repositories/...
 # interactive: after schema preview GOAT asks “Customize output paths?” → type per component
 ```
+
 </details>
 
 ### 📁 Custom paths — you choose where files go
@@ -192,12 +199,13 @@ php artisan goat:make Product
 
 ---
 
-### 🧬 Inputs — Migration *or* ERD → one schema
+### 🧬 Inputs — Migration _or_ ERD → one schema
 
 **Migration** — understands Blueprint:
 `id`, `string`, `text`, `integer`, `bigInteger`, `decimal`, `float`, `boolean`, `date`, `datetime`, `timestamp`, `foreignId`, `uuid`, `json`, `enum`, `softDeletes`, `timestamps`, `unique`, `nullable`, `default`, `constrained`, `index`…
 
 **ERD** — plain text, forgiving:
+
 ```
 inventories
 ------------
@@ -208,7 +216,8 @@ quantity integer
 price decimal(10,2)
 created_at timestamp
 ```
-*No type?* Inferred (`quantity`→`integer`, `price`→`decimal`, `description`→`text`). Handles `PK`, `FK -> categories.id`, `UNIQUE`, `DEFAULT 0`, `varchar(100)`.
+
+_No type?_ Inferred (`quantity`→`integer`, `price`→`decimal`, `description`→`text`). Handles `PK`, `FK -> categories.id`, `UNIQUE`, `DEFAULT 0`, `varchar(100)`.
 
 <details>
 <summary>ERD full example</summary>
@@ -226,6 +235,7 @@ categories
 id bigint PK
 name varchar
 ```
+
 `GoatSchema` is the single source of truth — parsers feed it, 9 generators consume it.
 
 </details>
@@ -235,6 +245,7 @@ name varchar
 ### 🧩 What gets generated
 
 **`Product.php`** — `fillable`, `casts`, `belongsTo(Category::class)`
+
 ```php
 protected $fillable = ['category_id','name','price'];
 protected function casts(): array { return ['price' => 'decimal:2']; }
@@ -271,14 +282,17 @@ return [
 ```
 
 Stubs — one per artifact:
+
 ```
 stubs/model.stub, migration.stub, request.stub, resource.stub,
       controller.stub, service.stub, repository.stub, policy.stub, test.stub
 ```
+
 ```bash
 php artisan vendor:publish --tag=goat-stubs
 # → resources/stubs/vendor/goat/*.stub — edit once, generate forever
 ```
+
 `StubRenderer` prefers your published stub, falls back to package default.
 
 ---
@@ -326,6 +340,7 @@ Covers: migration/ERD parsing, columns, relationships, naming, 9 generators, CLI
 composer config repositories.goat vcs https://github.com/CodeWithTeds/meehh.git
 composer require meehh/laravel-goat:@dev --dev
 ```
+
 Once on Packagist: `composer require meehh/laravel-goat --dev`
 
 Requires `PHP ^8.3` · `Laravel 11|12|13`

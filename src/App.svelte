@@ -6,7 +6,9 @@
 
 <Header />
 
-<div class="flex h-auto min-h-[calc(100svh-56px)] flex-col bg-black min-[861px]:h-[calc(100svh-56px)] min-[861px]:flex-row">
+<div
+  class="flex h-auto min-h-[calc(100svh-56px)] flex-col bg-black min-[861px]:h-[calc(100svh-56px)] min-[861px]:flex-row"
+>
   <Sidebar />
   <PackageList />
 </div>

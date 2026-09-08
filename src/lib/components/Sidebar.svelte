@@ -1,18 +1,21 @@
 <script>
-  import Scale from "@lucide/svelte/icons/scale";
-  import { siGithub, siPackagist } from "simple-icons";
-  import LaravelLogo from "./LaravelLogo.svelte";
+  import Scale from '@lucide/svelte/icons/scale';
+  import { siGithub, siPackagist } from 'simple-icons';
+  import LaravelLogo from './LaravelLogo.svelte';
 </script>
 
-<aside class="flex w-full min-w-0 flex-col items-center justify-center gap-6 border-b border-[#161616] bg-black px-8 py-9 text-center min-[861px]:w-[30%] min-[861px]:min-w-[320px] min-[861px]:border-b-0 min-[861px]:border-r min-[861px]:border-[#111]">
+<aside
+  class="flex w-full min-w-0 flex-col items-center justify-center gap-6 border-b border-[#161616] bg-black px-8 py-9 text-center min-[861px]:w-[30%] min-[861px]:min-w-[320px] min-[861px]:border-r min-[861px]:border-b-0 min-[861px]:border-[#111]"
+>
   <LaravelLogo cols={36} />
 
-  <h1 class="m-0 text-center text-[34px] font-normal leading-[1.15] tracking-[-0.02em] text-white">
+  <h1 class="m-0 text-center text-[34px] leading-[1.15] font-normal tracking-[-0.02em] text-white">
     This website is for devs and contains packages that they need.
   </h1>
 
-  <p class="m-0 text-center text-[18px] font-normal leading-[1.6] text-white/62">
-    Curated Laravel packages, tools and resources — built for developers, by developers. Find, compare and install the packages you need.
+  <p class="m-0 text-center text-[18px] leading-[1.6] font-normal text-white/62">
+    Curated Laravel packages, tools and resources — built for developers, by developers. Find,
+    compare and install the packages you need.
   </p>
 
   <div class="mt-1 flex flex-wrap items-center justify-center gap-2.5">
