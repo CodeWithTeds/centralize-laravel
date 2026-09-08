@@ -3,7 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "$lib": ["./src/lib"],
-      "$lib/*": ["./src/lib/*"]
+      "$lib/*": ["./src/lib/*"],
+      "@": ["./src"],
+      "@/*": ["./src/*"]
     },
     "moduleResolution": "bundler",
     "target": "ESNext",

@@ -1,6 +1,6 @@
-import type { PackageItem } from '../types';
-import goatVideo from '../../assets/videos/goat.webm';
-import fastestVideo from '../../assets/videos/fastest.webm';
+import type { PackageItem } from '$lib/types';
+import goatVideo from '@/assets/videos/goat.webm';
+import fastestVideo from '@/assets/videos/fastest.webm';
 
 export const packages: PackageItem[] = [
   {
