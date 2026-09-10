@@ -8,12 +8,12 @@ const pkg: PackageItem = {
   meta: 'MIT · Owned by Prof Alex / TE-AD',
   video: goatVideo,
   videoAlt: 'laravel-goat goat animation',
-  command: 'composer require meehh/laravel-goat',
+  command: 'composer require meehh/laravel-goat --dev',
   description:
-    'is a Laravel feature generator that transforms your schema into complete boilerplate including migrations, models, controllers, and API routes.',
+    'Terminal-first feature generator that turns a single migration or ERD into a complete slice — model, migration, requests, resource, thin controller, service, repository, policy and tests. 100% local, no AI or SaaS.',
   links: [
     { label: 'packagist.org', url: 'https://packagist.org/packages/meehh/laravel-goat' },
-    { label: 'github.com/CodeWithTeds/meehh', url: 'https://github.com/CodeWithTeds/meehh' }
+    { label: 'github.com', url: 'https://github.com/CodeWithTeds/meehh' }
   ],
   order: 1
 };
